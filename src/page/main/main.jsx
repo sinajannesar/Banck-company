@@ -9,7 +9,7 @@ function MainPage() {
       <div className="max-w-[1280px] mx-auto py-8">
         <Header />
         <Hero />
-        <JobListings />
+        {/* <JobListings /> */}
       </div>
     </div>
   );

@@ -5,3 +5,8 @@
 * {
   font-family: "Lexend", "sans-serif", "Courier New", Courier, monospace;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
