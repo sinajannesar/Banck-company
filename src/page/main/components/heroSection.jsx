@@ -3,10 +3,9 @@ import desin from "../../../assets/Abstract Design.png";
 
 export default function Hero_Section() {
   return (
-    <div className=" flex justify-center items-center mt-25   ">
-      <div className="w-full max-w-screen-xl aspect-[18/8] bg-neutral-900 rounded-2xl sm:mt-52">
-
-        <div className=" absolute bg-neutral-950 z-20 lg:top-52  flex justify-center flex-col rounded-ee-3xl  pb-20 lg:max-w-[701px] lg:max-h-[405px]  md:max-w-[608px] md:max-h-[338px]">
+    <div className=" flex justify-center items-center mt-25">
+      <div className="w-full max-w-screen-xl bg-neutral-900 rounded-2xl sm:mt-52">
+        <div className=" absolute bg-neutral-950 z-20 lg:top-52 flex justify-center flex-col rounded-ee-3xl pb-20">
           <h1 className="text-gray-300 lg:text-6xl md:text-5xl sm:text-3xl p-10 text-nowrap ">
             Welcome to <span className="text-lime-400">YourBank</span> <br />
             Careers
@@ -23,7 +22,7 @@ export default function Hero_Section() {
           </p>
         </div>
         <div className="z-10 absolute lg:right-32 lg:top-52">
-          <img src={bg} className="lg:max-w-[986px] lg:max-h-[716px] w-auto h-auto md:max-w-[715px] md:max-h-[568px] sm:max-w-[329px] sm:max-h-[253px]" />
+          <img src={bg} className="" />
         </div>
 
         <div className="z-0 absolute right-20 top-44">

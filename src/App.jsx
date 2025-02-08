@@ -1,9 +1,9 @@
-import Camponens from "./Camponens/Camponens";
+import MainPage from "./page/main/main";
 
 export default function App() {
   return (
-    <div>
-      <Camponens/>
+    <div className="bg-zinc-950">
+      <MainPage />
     </div>
-  )
+  );
 }
