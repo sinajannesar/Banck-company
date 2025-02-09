@@ -1,5 +1,6 @@
 import Header from "../../components/Header/Header";
 import Hero from "./components/heroSection";
+import JobOpenings from "./components/JobOpenings";
 import OurBenefits from "./components/OurBenefits";
 import OurValues from "./components/OurValues";
 
@@ -11,6 +12,7 @@ function MainPage() {
         <Hero />
         <OurValues/>
         <OurBenefits/>
+        <JobOpenings/>
       </div>
     </div>
   );
