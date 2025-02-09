@@ -1,6 +1,7 @@
 import Header from "../../components/Header/Header";
 import Hero from "./components/heroSection";
-import JobListings from "./components/jobListings";
+import OurBenefits from "./components/OurBenefits";
+import OurValues from "./components/OurValues";
 
 function MainPage() {
   return (
@@ -8,7 +9,8 @@ function MainPage() {
       <div className="max-w-[1280px] mx-auto py-8">
         <Header />
         <Hero />
-        <JobListings/>
+        <OurValues/>
+        <OurBenefits/>
       </div>
     </div>
   );

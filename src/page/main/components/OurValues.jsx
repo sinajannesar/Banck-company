@@ -1,4 +1,4 @@
-export default function JobListings() {
+export default function OurValues() {
   const values = [
     {
       title: "Integrity",
