@@ -1,7 +1,7 @@
-import film from "../../../assets/Icon Container2.png";
-import data from "../../../assets/Icon Container.png";
-import kif from "../../../assets/Container.png";
-import lamp from "../../../assets/lamp.png";
+import film from "../../../../assets/Icon Container2.png";
+import data from "../../../../assets/Icon Container.png";
+import kif from "../../../../assets/Container.png";
+import lamp from "../../../../assets/lamp.png";
 export default function OurBenefits() {
   const value = [
     {

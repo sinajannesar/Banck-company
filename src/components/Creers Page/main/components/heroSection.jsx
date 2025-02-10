@@ -1,5 +1,5 @@
-import bg from "../../../assets/bgHero.png";
-import desin from "../../../assets/Abstract Design.png";
+import bg from "../../../../assets/bgHero.png"
+import desin from "../../../../assets/Abstract Design.png";
 
 export default function Hero_Section() {
   return (
