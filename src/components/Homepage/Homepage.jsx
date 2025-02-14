@@ -1,5 +1,7 @@
 import Heropage from "./Heropage";
+import OurFeatures from "./OurFeatures";
 import Ourproducts from "./Ourproducts";
+import Usecases from "./Usecases";
 
 
 export default function Homepage() {
@@ -7,6 +9,8 @@ export default function Homepage() {
     <div>
       <Heropage/>
       <Ourproducts/>
+      <Usecases/>
+      <OurFeatures/>
     </div>
   )
 }

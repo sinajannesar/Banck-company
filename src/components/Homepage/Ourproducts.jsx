@@ -4,7 +4,7 @@ import mani from "../../assets/many.png";
 export default function Ourproducts() {
   return (
     <div>
-      <div className="flex flex-nowrap items-center justify-center gap-28 ">
+      <div className="flex flex- items-center justify-center gap-28 ">
         <div className="mt-36 flex flex-col pb-20 ">
           <h1 className="text-5xl text-white flex sm:items-center sm:justify-center lg:justify-start lg:text-left pb-4">
             Our <span className="text-lime-400"> Products</span>
