@@ -31,7 +31,7 @@ export default function OurFeatures() {
           <h1 className="text-5xl text-white flex sm:justify-center lg:justify-start lg:text-left pb-4 ">
             Our <span className="text-lime-400"> Features</span>
           </h1>
-          <p className="text-neutral-400 z-20">
+          <p className="text-neutral-400 z-20 flex items-center sm:text-sm lg:text-lg">
             Experience a host of powerful features at YourBank, including
             seamless online banking, secure transactions, and personalized
             financial insights, all designed to enhance your banking experience.

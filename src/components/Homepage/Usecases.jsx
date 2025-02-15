@@ -6,7 +6,7 @@ import desinn from "../../assets/desin2.png";
 
 export default function Usecases() {
   return (
-    <div className="flex flex-col items-center lg:items-start px-5">
+    <div className="flex flex-col items-center lg:items-start lg:pl-60">
       
       <div className="mt-10 text-center lg:text-left">
         <h1 className="text-5xl text-lime-400">Use Cases</h1>
