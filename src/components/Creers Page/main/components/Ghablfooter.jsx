@@ -1,6 +1,6 @@
 export default function Ghablfooter() {
   return (
-    <div className="flex flex-col w-fit h-fit  sm:items-center sm:text-center sm:gap-8 lg:flex-row  justify-center border border-neutral-800 bg-neutral-900 lg:ml-60  p-10 lg:p-20 mt-36 rounded-2xl  ">
+    <div className="flex flex-col w-fit h-fit  sm:items-center sm:text-center sm:gap-8 lg:flex-row  justify-center border border-neutral-800 bg-neutral-900 lg:ml-60  p-10 lg:p-20 mt-36 rounded-2xl lg:mb-10 ">
       <div>
         <h1 className="lg:text-4xl sm:text-2xl text-neutral-100 lg:text-nowrap sm:text-wrap">
           Start your Career with

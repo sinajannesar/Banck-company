@@ -35,8 +35,8 @@ export default function OurTestimonials() {
   const nextRef = useRef(null);
   return (
     <div className="relative w-full ">
-      <div className="flex flex- items-center justify-center gap-28 ">
-        <div className="mt-36 flex flex-col pb-20 ">
+      <div className="flex flex-col lg:flex-row  items-center justify-center lg:gap-28 gap-1 ">
+        <div className="mt-36 flex flex-col lg:pb-20 ">
           <h1 className="text-5xl text-white flex sm:items-center sm:justify-center lg:justify-start lg:text-left pb-4">
             Our <span className="text-lime-400"> Products</span>
           </h1>
@@ -46,8 +46,8 @@ export default function OurTestimonials() {
             aspirations
           </p>
         </div>
-        <div className="bg-neutral-900 rounded-full text-neutral-200 p-2 mt-20 flex flex-col sm:flex-row items-center justify-center gap-4 sm:space-x-4">
-          <button className="hover:bg-lime-400 hover:text-neutral-900 py-3 px-6 sm:p-4 rounded-full hover:font-semibold w-full sm:w-auto">
+        <div className=" flex  sm:flex-row bg-neutral-900 rounded-full text-neutral-200 p-2 mt-20  items-center justify-center gap-4 sm:space-x-4">
+          <button className="hover:bg-lime-400 hover:text-neutral-900 py-3 px-6 sm:p-4 rounded-full hover:font-semibold   sm:text-sm lg:text-lg">
             For Individuals
           </button>
           <button className="hover:bg-lime-400 hover:text-neutral-900 py-3 px-6 sm:p-4 rounded-full hover:font-semibold w-full sm:w-auto">
@@ -56,7 +56,7 @@ export default function OurTestimonials() {
         </div>
       </div>
 
-      <div className="relative overflow-hidden mt-10">
+      <div className="relative overflow-hidden mt-6">
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
@@ -101,7 +101,7 @@ export default function OurTestimonials() {
 
         <div
           ref={prevRef}
-          className=" rounded-full border border-neutral-800 bg-neutral-900 p-3 absolute top-1/2 left-8 -translate-y-1/2 prev text-lime-400 cursor-pointer text-3xl z-10"
+          className=" rounded-full border border-neutral-800 bg-neutral-900 p-3 absolute top-1/2 left-8 -translate-y-1/2 prev text-lime-400 cursor-pointer text-3xl z-10 sm: "
         >
           <GoArrowLeft />
         </div>
