@@ -1,11 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/effect-coverflow";
-import quot from "../../assets/dokhat.png";
+import "swiper/css/effect-coverflow"; 
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useRef } from "react";
+
+import { Navigation } from "swiper";
+
+import quot from "../../assets/dokhat.png";
 
 export default function OurTestimonials() {
   const testimonials = [
@@ -33,10 +35,10 @@ export default function OurTestimonials() {
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  
+
   return (
     <div className="relative w-full ">
-      <div className="flex flex-col lg:flex-row  items-center justify-center lg:gap-28 gap-1 ">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-28 gap-1 ">
         <div className="mt-36 flex flex-col lg:pb-20 ">
           <h1 className="text-5xl text-white flex sm:items-center sm:justify-center lg:justify-start lg:text-left pb-4">
             Our <span className="text-lime-400"> Products</span>
@@ -47,8 +49,8 @@ export default function OurTestimonials() {
             aspirations
           </p>
         </div>
-        <div className=" flex  sm:flex-row bg-neutral-900 rounded-full text-neutral-200 p-2 mt-20  items-center justify-center gap-4 sm:space-x-4">
-          <button className="hover:bg-lime-400 hover:text-neutral-900 py-3 px-6 sm:p-4 rounded-full hover:font-semibold   sm:text-sm lg:text-lg">
+        <div className=" flex sm:flex-row bg-neutral-900 rounded-full text-neutral-200 p-2 mt-20 items-center justify-center gap-4 sm:space-x-4">
+          <button className="hover:bg-lime-400 hover:text-neutral-900 py-3 px-6 sm:p-4 rounded-full hover:font-semibold sm:text-sm lg:text-lg">
             For Individuals
           </button>
           <button className="hover:bg-lime-400 hover:text-neutral-900 py-3 px-6 sm:p-4 rounded-full hover:font-semibold w-full sm:w-auto">
@@ -70,21 +72,16 @@ export default function OurTestimonials() {
             modifier: 1,
             slideShadows: false,
           }}
-          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-          onSwiper={(swiper) => {
-            setTimeout(() => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            });
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
           }}
-          modules={[Navigation, EffectCoverflow]}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            1024: { slidesPerView: 2 },
-            1280: { slidesPerView: 3 },
-          }}
+          modules={[Navigation]}
+          //</div>breakpoints={{
+            //640: { slidesPerView: 1 },
+            //1024: { slidesPerView: 2 },
+            //1280: { slidesPerView: 3 },
+          //}}
           className="relative"
         >
           {testimonials.map((item, index) => (
@@ -102,13 +99,13 @@ export default function OurTestimonials() {
 
         <div
           ref={prevRef}
-          className=" rounded-full border border-neutral-800 bg-neutral-900 p-3 absolute top-1/2 left-8 -translate-y-1/2 prev text-lime-400 cursor-pointer text-3xl z-10 sm: "
+          className="rounded-full border border-neutral-800 bg-neutral-900 p-3 absolute top-1/2 left-8 -translate-y-1/2 prev text-lime-400 cursor-pointer text-3xl z-10"
         >
           <GoArrowLeft />
         </div>
         <div
           ref={nextRef}
-          className=" absolute rounded-full border border-neutral-800 bg-neutral-900 p-3  top-1/2 right-8 -translate-y-1/2 next text-lime-400 cursor-pointer text-3xl z-10"
+          className="absolute rounded-full border border-neutral-800 bg-neutral-900 p-3 top-1/2 right-8 -translate-y-1/2 next text-lime-400 cursor-pointer text-3xl z-10"
         >
           <GoArrowRight />
         </div>

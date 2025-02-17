@@ -29,7 +29,7 @@ const writeDB = (data) => {
     }
 };
 
-app.post("/api/signup", (req, res) => {
+app.post("/api/SingUP", (req, res) => {
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
