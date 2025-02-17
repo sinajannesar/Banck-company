@@ -12,6 +12,10 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.5",
     "@tailwindcss/vite": "^4.0.5",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
     "lucide-react": "^0.474.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -31,7 +35,21 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "json-server": "^1.0.0-beta.3",
     "postcss": "^8.5.1",
     "vite": "^6.0.5"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinajannesar/Banck-company.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sinajannesar/Banck-company/issues"
+  },
+  "homepage": "https://github.com/sinajannesar/Banck-company#readme"
 }
