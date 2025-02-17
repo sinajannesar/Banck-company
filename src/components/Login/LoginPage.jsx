@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import googel from "../../assets/googel.png";
 import appel from "../../assets/appel.png";
@@ -9,25 +9,24 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/users") 
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch((err) => console.error("Error fetching users:", err));
+  }, []);
 
   const handleLogin = async () => {
     setError("");
-    try {
-      const response = await fetch("http://localhost:3000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await response.json();
-      
-      if (data.success) {
-        navigate("/Homepage");
-      } else {
-        setError(data.message);
-      }
-    } catch (err) {
-        setError("Server error. Please try again later.");
-        console.error(err);
+    
+    const user = users.find((user) => user.email === email && user.password === password);
+
+    if (user) {
+      navigate("/Homepage"); 
+    } else {
+      setError("Invalid email or password."); 
     }
   };
 
@@ -57,7 +56,7 @@ export default function LoginPage() {
       </div>
       {error && <p className="text-red-500 mt-2">{error}</p>}
       <div className="flex flex-col gap-8">
-        <a href="/SingUP" className="text-neutral-300 pt-8 underline sm:text-sm lg:text-lg">
+        <a href="/SignUP" className="text-neutral-300 pt-8 underline sm:text-sm lg:text-lg">
           Forgot Password?
         </a>
         <div className="flex flex-col gap-8 lg:min-w-md sm:max-h-72">
@@ -68,7 +67,7 @@ export default function LoginPage() {
             Login
           </button>
           <button
-            onClick={() => navigate("/SingUP")}
+            onClick={() => navigate("/SignUP")}
             className="bg-neutral-800 text-neutral-300 hover:text-neutral-800 hover:font-semibold hover:bg-lime-600 text-sm p-4 rounded-full"
           >
             Sign Up

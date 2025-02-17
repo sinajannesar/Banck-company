@@ -33,6 +33,7 @@ export default function OurTestimonials() {
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  
   return (
     <div className="relative w-full ">
       <div className="flex flex-col lg:flex-row  items-center justify-center lg:gap-28 gap-1 ">
