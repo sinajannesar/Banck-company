@@ -72,16 +72,21 @@ export default function OurTestimonials() {
             modifier: 1,
             slideShadows: false,
           }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
+          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          onSwiper={(swiper) => {
+            setTimeout(() => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            });
           }}
-          modules={[Navigation]}
-          //</div>breakpoints={{
-            //640: { slidesPerView: 1 },
-            //1024: { slidesPerView: 2 },
-            //1280: { slidesPerView: 3 },
-          //}}
+          modules={[Navigation, EffectCoverflow]}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            1024: { slidesPerView: 2 },
+            1280: { slidesPerView: 3 },
+          }}
           className="relative"
         >
           {testimonials.map((item, index) => (
@@ -95,7 +100,7 @@ export default function OurTestimonials() {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </SwiperComponent>
 
         <div
           ref={prevRef}
@@ -113,3 +118,90 @@ export default function OurTestimonials() {
     </div>
   );
 }
+
+//https://swiperjs.com/react
+//https://swiperjs.com/swiper-api#navigation
+const SwiperComponent = ({ children }) => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  return (
+    <div className="relative">
+      <Swiper
+        modules={[Navigation, EffectCoverflow]}
+        spaceBetween={30}
+        slidesPerView={1}
+        loop={true}
+        effect="coverflow"
+        coverflowEffect={{
+          rotate: 10,
+          stretch: 50,
+          depth: 0,
+          modifier: 1,
+          slideShadows: false,
+        }}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+          enabled: true,
+        }}
+        onInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          1024: { slidesPerView: 2 },
+          1280: { slidesPerView: 3 },
+        }}
+        className="relative"
+      >
+        {children}
+      </Swiper>
+
+      {/* Navigation Buttons */}
+      <button
+        ref={prevRef}
+        className="absolute left-0 top-1/2 z-10 -translate-y-1/2 transform bg-white p-2 shadow-md"
+        aria-label="Previous slide"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-6 w-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
+      <button
+        ref={nextRef}
+        className="absolute right-0 top-1/2 z-10 -translate-y-1/2 transform bg-white p-2 shadow-md"
+        aria-label="Next slide"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-6 w-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
+    </div>
+  );
+};
