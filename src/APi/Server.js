@@ -13,7 +13,7 @@ const dbPath = "database.json";
 
 const readDB = () => {
     try {
-        if (!fs.existsSync(dbPath)) return []; 
+        if (!fs.existsSync(dbPath)) return [];
         return JSON.parse(fs.readFileSync(dbPath, "utf-8"));
     } catch (error) {
         console.error("❌ Error reading database:", error);
@@ -71,7 +71,7 @@ app.post("/api/login", (req, res) => {
     return res.status(200).json({
         success: true,
         message: "Login successful.",
-        user: { id: user.id, name: user.name, email: user.email }, // ارسال اطلاعات مهم بدون رمز عبور
+        user: { id: user.id, name: user.name, email: user.email },
     });
 });
 
